@@ -1,0 +1,130 @@
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+#export TERM=st
+export EDITOR=nvim
+export GUI_EDITOR=code
+export BROWSER=brave
+
+# Java
+export PATH="/usr/java/jre1.8.0_101/bin:$PATH"
+export PATH="/usr/java/jdk1.8.0_101/bin:$PATH"
+export JAVA_HOME="/usr/java/jdk1.8.0_101"
+export _JAVA_OPTIONS="-Xmx2048m"
+
+# XDG
+export PATH="$HOME/Code/Shell:$PATH"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_MUSIC_DIR="$HOME/Music"
+
+# Cleanup
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export HISTFILE="$XDG_DATA_HOME/bash/history"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
+# Misc
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export SUDO_ASKPASS="$HOME/.scripts/dpass"
+export PATH="$PATH:/usr/lib"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/npm/bin:$PATH"
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias lazydotfiles='/usr/bin/lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+alias vim='nvim'
+alias pacman-update='sudo pacman-mirrors --geoip'
+
+alias ls='ls --color=auto'
+alias tmux='tmux -u -f ~/.config/tmux/tmux.conf'
+alias ll='ls -l --color=auto'
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias l='ls -lFh --color=auto'     #size,show type,human readable
+alias la='ls -lAFh --color=auto'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh --color=auto'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh --color=auto'   #long list,sorted by date,show type,human readable
+alias ll='ls -l --color=auto'      #long list
+alias ldot='ls -ld --color=auto .*'
+alias lS='ls -1FSsh --color=auto'
+alias lart='ls -1Fcart --color=auto'
+alias lrt='ls -1Fcrt --color=auto'
+
+alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias t='tail -f'
+
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias gds-start='sudo systemctl start openvpn-client@gds'
+alias gds-stop='sudo systemctl stop openvpn-client@gds'
+gitpush() {
+    git add .
+    git commit -m "$*"
+    git pull
+    git push
+}
+gitupdate() {
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/github
+    ssh -T git@github.com
+}
+alias gp=gitpush
+alias gu=gitupdate
+alias lbrynet='/opt/LBRY/resources/static/daemon/lbrynet'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
