@@ -140,15 +140,14 @@ if type(main.signals) == "table" then
 	for _, entry in ipairs(main.signals) do screen.connect_signal(entry[1], entry[2]) end
 end
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(beautiful.at_screen_connect)
+awful.screen.connect_for_each_screen(beautiful.atScreenConnect or beautiful.at_screen_connect)
 
 -- Mouse bindings
 root.buttons(joinButtonsList(require("buttons.mouse")))
 
 -- Key bindings
 local clientKeys = joinKeysList(require("binding.client-keys"))
-
-local clientbuttons = joinButtonsList(require("buttons.client"))
+local clientButtons = joinButtonsList(require("buttons.client"))
 
 -- Set keys
 root.keys(joinKeysList(require("binding.global-keys")))
@@ -164,7 +163,7 @@ awful.rules.rules = {
 			focus = awful.client.focus.filter,
 			raise = true,
 			keys = clientKeys,
-			buttons = clientbuttons,
+			buttons = clientButtons,
 			screen = awful.screen.preferred,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 			size_hints_honor = false
@@ -211,18 +210,17 @@ local function attachTitlebar(c)
 		return
 	end
 
-	local function moveClient()
-		c:emit_signal("request::activate", "titlebar", {raise = true})
-		awful.mouse.client.move(c)
-	end
-	local function resizeClient()
-		c:emit_signal("request::activate", "titlebar", {raise = true})
-		awful.mouse.client.resize(c)
-	end
-
 	-- Default
 	-- buttons for the titlebar
-	local buttons = my_table.join(awful.button({}, 1, moveClient), awful.button({}, 3, resizeClient))
+	local buttons = my_table.join(awful.button({}, 1, function()
+		c:emit_signal("request::activate", "titlebar", {raise = true})
+		awful.mouse.client.move(c)
+	end),
+	--awful.button({}, 2, function() c:kill() end),
+	awful.button({}, 3, function()
+		c:emit_signal("request::activate", "titlebar", {raise = true})
+		awful.mouse.client.resize(c)
+	end))
 
 	awful.titlebar(c, {size = dpi(16)}):setup{
 		{ -- Left

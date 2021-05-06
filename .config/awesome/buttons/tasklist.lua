@@ -45,7 +45,7 @@ end
 
 return {
 	{ button = 1, press = minimizeAndMaximize },
-	{ button = 2, press = killClient },
+	--{ button = 2, press = killClient },
 	{ button = 3, press = showClientList },
 	{ button = 4, press = nextClient },
 	{ button = 5, press = prevClient },

@@ -27,7 +27,7 @@ ex ()
 #export TERM=st
 export EDITOR=nvim
 export GUI_EDITOR=code
-export BROWSER=brave
+export BROWSER="st vifm"
 
 # Java
 export PATH="/usr/java/jre1.8.0_101/bin:$PATH"
@@ -37,9 +37,6 @@ export _JAVA_OPTIONS="-Xmx2048m"
 
 # XDG
 export PATH="$HOME/Code/Shell:$PATH"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_MUSIC_DIR="$HOME/Music"
 
 # Cleanup
@@ -52,7 +49,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Misc
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export SUDO_ASKPASS="$HOME/.scripts/dpass"
 export PATH="$PATH:/usr/lib"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/npm/bin:$PATH"

@@ -1,0 +1,16 @@
+{
+	"vscode-lua-format.configPath": ".vscode/luaformat.config",
+	"Lua.diagnostics.globals": [
+		"awesome",
+		"screen",
+		"client",
+		"root",
+		"mouse",
+		"capi",
+		"mousegrabber",
+		"tag"
+	],
+	"editor.rulers": [80],
+	"restructuredtext.confPath": "",
+	"Lua.diagnostics.enable": false,
+}

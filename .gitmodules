@@ -4,3 +4,6 @@
 [submodule ".config/awesome/modules/lain"]
 	path = .config/awesome/modules/lain
 	url = https://github.com/lcpz/lain
+[submodule ".config/awesome/modules/freedesktop"]
+	path = .config/awesome/modules/freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop
