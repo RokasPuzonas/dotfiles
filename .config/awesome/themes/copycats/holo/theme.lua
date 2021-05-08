@@ -13,7 +13,7 @@ local dpi   = require("beautiful.xresources").apply_dpi
 local config = require("config")
 
 local string, os = string, os
-local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
+
 
 local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
@@ -177,25 +177,25 @@ theme.mpd = lain.widget.mpd({
 local musicbg = wibox.container.background(theme.mpd.widget, theme.bg_focus, gears.shape.rectangle)
 local musicwidget = wibox.container.margin(musicbg, dpi(0), dpi(0), dpi(5), dpi(5))
 
-musicwidget:buttons(my_table.join(awful.button({ }, 1,
+musicwidget:buttons(gears.table.join(awful.button({ }, 1,
 function () awful.spawn(theme.musicplr) end)))
-prev_icon:buttons(my_table.join(awful.button({}, 1,
+prev_icon:buttons(gears.table.join(awful.button({}, 1,
 function ()
     os.execute("mpc prev")
     theme.mpd.update()
 end)))
-next_icon:buttons(my_table.join(awful.button({}, 1,
+next_icon:buttons(gears.table.join(awful.button({}, 1,
 function ()
     os.execute("mpc next")
     theme.mpd.update()
 end)))
-stop_icon:buttons(my_table.join(awful.button({}, 1,
+stop_icon:buttons(gears.table.join(awful.button({}, 1,
 function ()
     play_pause_icon:set_image(theme.play)
     os.execute("mpc stop")
     theme.mpd.update()
 end)))
-play_pause_icon:buttons(my_table.join(awful.button({}, 1,
+play_pause_icon:buttons(gears.table.join(awful.button({}, 1,
 function ()
     os.execute("mpc toggle")
     theme.mpd.update()
@@ -305,7 +305,7 @@ function theme.at_screen_connect(s)
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(my_table.join(
+    s.mylayoutbox:buttons(gears.table.join(
                            awful.button({}, 1, function () awful.layout.inc( 1) end),
                            awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
                            awful.button({}, 3, function () awful.layout.inc(-1) end),

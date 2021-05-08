@@ -15,7 +15,7 @@ local config = require("config")
 local modkey = config.modkey
 local altkey = config.altkey
 local os = os
-local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
+
 
 local theme                                     = {}
 theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/powerarrow-dark"
@@ -116,7 +116,7 @@ theme.cal = lain.widget.cal({
 -- Mail IMAP check
 local mailicon = wibox.widget.imagebox(theme.widget_mail)
 --[[ commented because it needs to be set before use
-mailicon:buttons(my_table.join(awful.button({ }, 1, function () awful.spawn(mail) end)))
+mailicon:buttons(gears.table.join(awful.button({ }, 1, function () awful.spawn(mail) end)))
 theme.mail = lain.widget.imap({
 	timeout  = 180,
 	server   = "server",
@@ -137,7 +137,7 @@ theme.mail = lain.widget.imap({
 -- MPD
 local musicplr = awful.util.terminal .. " -t Music -g 130x34-320+16 -e ncmpcpp"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
-mpdicon:buttons(my_table.join(
+mpdicon:buttons(gears.table.join(
 awful.button({ modkey }, 1, function () awful.spawn.with_shell(musicplr) end),
 awful.button({ }, 1, function ()
 	os.execute("mpc prev")
@@ -290,7 +290,7 @@ function theme.at_screen_connect(s)
 	-- Create an imagebox widget which will contains an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
-	s.mylayoutbox:buttons(my_table.join(
+	s.mylayoutbox:buttons(gears.table.join(
 	awful.button({}, 1, function () awful.layout.inc( 1) end),
 	awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
 	awful.button({}, 3, function () awful.layout.inc(-1) end),

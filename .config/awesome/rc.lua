@@ -18,7 +18,6 @@ local lain = require("lain")
 local freedesktop = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
-local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi = require("beautiful.xresources").apply_dpi
 
 local main = require("main")
@@ -56,7 +55,7 @@ local function joinButtonsList(buttons_list)
 	for i, button in ipairs(buttons_list) do
 		button_objects[i] = awful.button(button.mod or {}, button.button, button.press, button.release)
 	end
-	return my_table.join(table.unpack(button_objects))
+	return gears.table.join(table.unpack(button_objects))
 end
 
 local function joinKeysList(keys_list)
@@ -82,7 +81,7 @@ local function joinKeysList(keys_list)
 		end
 	end
 
-	return my_table.join(table.unpack(key_objects))
+	return gears.table.join(table.unpack(key_objects))
 end
 
 awful.util.taglist_buttons = joinButtonsList(require("buttons.taglist"))

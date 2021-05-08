@@ -13,7 +13,7 @@ local dpi   = require("beautiful.xresources").apply_dpi
 local config = require("config")
 
 local math, string, tag, tonumber, type, os = math, string, tag, tonumber, type, os
-local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
+
 
 local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
@@ -210,7 +210,7 @@ theme.volume = lain.widget.alsabar({
 		volicon:set_image(theme[index])
 	end
 })
-volicon:buttons(my_table.join (
+volicon:buttons(gears.table.join (
 awful.button({}, 1, function()
 	awful.spawn(string.format("%s -e alsamixer", awful.util.terminal))
 end),
@@ -409,7 +409,7 @@ function theme.at_screen_connect(s)
 	-- Create an imagebox widget which will contains an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
-	s.mylayoutbox:buttons(my_table.join(
+	s.mylayoutbox:buttons(gears.table.join(
 	awful.button({}, 1, function () awful.layout.inc( 1) end),
 	awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
 	awful.button({}, 3, function () awful.layout.inc(-1) end),
