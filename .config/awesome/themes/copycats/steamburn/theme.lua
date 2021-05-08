@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.zenburn_dir                               = require("awful.util").get_themes_dir() .. "zenburn"
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/steamburn"
+theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/copycats/steamburn"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 10.5"
 theme.fg_normal                                 = "#e2ccb0"

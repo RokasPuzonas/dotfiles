@@ -17,8 +17,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
-theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
-theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
+theme.icon_dir                                  = gears.filesystem.get_configuration_dir() .. "themes/copycats/holo/icons"
+theme.wallpaper                                 = gears.filesystem.get_configuration_dir() .. "themes/copycats/holo/wall.png"
 theme.font                                      = "Roboto Bold 10"
 theme.taglist_font                              = "Roboto Condensed Regular 8"
 theme.fg_normal                                 = "#FFFFFF"
@@ -267,7 +267,7 @@ theme.weather = lain.widget.weather({
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.awesome_icon_launcher })
-mylauncher:connect_signal("button::press", function() awful.util.mymainmenu:toggle() end)
+mylauncher:connect_signal("button::press", function() awful.util.main_menu:toggle() end)
 
 -- Separators
 local first = wibox.widget.textbox('<span font="Roboto 7"> </span>')

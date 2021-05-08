@@ -18,7 +18,7 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/factory"
+theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/factory"
 theme.wallpaper                                 = "dwall -s factory"
 theme.font                                      = "Terminus 9"
 theme.fg_normal                                 = "#DDDDFF"

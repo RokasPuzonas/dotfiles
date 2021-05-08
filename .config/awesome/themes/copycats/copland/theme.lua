@@ -16,7 +16,7 @@ local awesome, client, os = awesome, client, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/copland"
+theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/copycats/copland"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 10.5"
 theme.fg_normal                                 = "#BBBBBB"

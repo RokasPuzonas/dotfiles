@@ -1,6 +1,6 @@
 --[[
 
-     Blackburn Awesome WM theme 3.0
+     Dremora Awesome WM theme 2.0
      github.com/lcpz
 
 --]]
@@ -16,23 +16,22 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/blackburn"
+theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/copycats/dremora"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 10.5"
 theme.taglist_font                              = "Icons 10"
-theme.fg_normal                                 = "#D7D7D7"
-theme.fg_focus                                  = "#F6784F"
-theme.bg_normal                                 = "#060606"
-theme.bg_focus                                  = "#060606"
+theme.fg_normal                                 = "#747474"
+theme.fg_focus                                  = "#DDDCFF"
+theme.bg_normal                                 = "#121212"
+theme.bg_focus                                  = "#121212"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_urgent                                 = "#2A1F1E"
-theme.border_width                              = dpi(1)
-theme.border_normal                             = "#0E0E0E"
-theme.border_focus                              = "#F79372"
-theme.taglist_fg_focus                          = "#F6784F"
-theme.taglist_bg_focus                          = "#060606"
-theme.tasklist_fg_focus                         = "#F6784F"
-theme.tasklist_bg_focus                         = "#060606"
+theme.border_width                              = dpi(0)
+theme.border_normal                             = "#121212"
+theme.border_focus                              = "#292929"
+theme.titlebar_bg_focus                         = "#292929"
+theme.taglist_fg_focus                          = "#dddcff"
+theme.taglist_bg_focus                          = "#121212"
 theme.menu_height                               = dpi(16)
 theme.menu_width                                = dpi(130)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
@@ -53,7 +52,7 @@ theme.layout_magnifier                          = theme.dir .. "/icons/magnifier
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = 0
+theme.useless_gap                               = dpi(10)
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -77,11 +76,12 @@ awful.util.tagnames   = { "ƀ", "Ƅ", "Ɗ", "ƈ", "ƙ" }
 
 local markup     = lain.util.markup
 local separators = lain.util.separators
-local gray       = "#9E9C9A"
-local white  = theme.fg_normal
+local white      = theme.fg_focus
+local gray       = "#858585"
 
 -- Textclock
-local mytextclock = wibox.widget.textclock(" %H:%M ")
+local mytextclock = wibox.widget.textclock(markup(gray, " %a")
+.. markup(white, " %d ") .. markup(gray, "%b ") ..  markup(white, "%H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -89,10 +89,9 @@ theme.cal = lain.widget.cal({
     attach_to = { mytextclock },
     notification_preset = {
         font = "Terminus 11",
-        fg   = theme.fg_normal,
+        fg   = white,
         bg   = theme.bg_normal
-    }
-})
+}})
 
 -- Mail IMAP check
 --[[ commented because it needs to be set before use
@@ -111,7 +110,7 @@ theme.mail = lain.widget.imap({
             count = mailcount .. " "
         end
 
-        widget:set_markup(markup.font(theme.font, markup(gray, mail) .. count))
+        widget:set_markup(markup.font(theme.font, markup(gray, mail) .. markup(white, count)))
     end
 })
 --]]
@@ -131,7 +130,7 @@ theme.mpd = lain.widget.mpd({
             title  = ""
         end
 
-        widget:set_markup(markup.font(theme.font, markup(gray, artist) .. title .. " "))
+        widget:set_markup(markup.font(theme.font, markup(gray, artist) .. markup(white, title)))
     end
 })
 
@@ -148,7 +147,7 @@ theme.fs = lain.widget.fs({
             fs_p      = fs_now["/home"].percentage
         end
 
-        widget:set_markup(markup.font(theme.font, markup(gray, fs_header) .. fs_p))
+        widget:set_markup(markup.font(theme.font, markup(gray, fs_header) .. markup(white, fs_p)))
     end
 })
 --]]
@@ -158,7 +157,7 @@ local bat = lain.widget.bat({
     settings = function()
         bat_header = " Bat "
         bat_p      = bat_now.perc .. " "
-        widget:set_markup(markup.font(theme.font, markup(gray, bat_header) .. bat_p))
+        widget:set_markup(markup.font(theme.font, markup(gray, bat_header) .. markup(white, bat_p)))
     end
 })
 
@@ -175,39 +174,20 @@ theme.volume = lain.widget.alsa({
             vlevel = vlevel .. " "
         end
 
-        widget:set_markup(markup.font(theme.font, markup(gray, header) .. vlevel))
+        widget:set_markup(markup.font(theme.font, markup(gray, header) .. markup(white, vlevel)))
     end
 })
 
 -- Weather
 theme.weather = lain.widget.weather({
     city_id = config.open_weather_city_id,
-    settings = function()
-        units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(" " .. units .. " ")
-    end
+    notification_preset = { fg = white }
 })
 
 -- Separators
 local first     = wibox.widget.textbox('<span font="Terminus 4"> </span>')
 local arrl_pre  = separators.arrow_right("alpha", "#1A1A1A")
 local arrl_post = separators.arrow_right("#1A1A1A", "alpha")
-
-local barheight = dpi(18)
-local barcolor  = gears.color({
-    type  = "linear",
-    from  = { barheight, 0 },
-    to    = { barheight, barheight },
-    stops = { {0, theme.bg_focus }, {0.8, theme.border_normal}, {1, "#1A1A1A"} }
-})
-theme.titlebar_bg = barcolor
-
-theme.titlebar_bg_focus = gears.color({
-    type  = "linear",
-    from  = { barheight, 0 },
-    to    = { barheight, barheight },
-    stops = { {0, theme.bg_normal}, {0.5, theme.border_normal}, {1, "#492417"} }
-})
 
 function theme.at_screen_connect(s)
     -- Quake application
@@ -234,15 +214,14 @@ function theme.at_screen_connect(s)
                            awful.button({}, 3, function () awful.layout.inc(-1) end),
                            awful.button({}, 4, function () awful.layout.inc( 1) end),
                            awful.button({}, 5, function () awful.layout.inc(-1) end)))
-
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { bg_normal = barcolor, bg_focus = barcolor })
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = barcolor })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -264,10 +243,8 @@ function theme.at_screen_connect(s)
             first,
             theme.mpd.widget,
             --theme.mail.widget,
-            theme.weather.icon,
-            theme.weather.widget,
             --theme.fs.widget,
-            bat,
+            bat.widget,
             theme.volume.widget,
             mytextclock,
         },

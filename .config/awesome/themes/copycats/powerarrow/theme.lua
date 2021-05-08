@@ -18,7 +18,7 @@ local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
+theme.dir                                       = gears.filesystem.get_configuration_dir() .. "themes/copycats/powerarrow"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 9"
 theme.fg_normal                                 = "#FEFEFE"

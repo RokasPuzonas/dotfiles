@@ -7,29 +7,29 @@ local config = require("config")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
-local theme_path = gfs.get_configuration_dir().."/themes/dieselpunk/"
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme = {}
 
-theme.font          = "Hack 9"
+theme.dir = gfs.get_configuration_dir() .. "/themes/dieselpunk/"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#FF5252"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.font = "Hack 9"
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.bg_normal = "#222222"
+theme.bg_focus = "#535d6c"
+theme.bg_urgent = "#FF5252"
+theme.bg_minimize = "#444444"
+theme.bg_systray = theme.bg_normal
 
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(1)
+theme.fg_normal = "#aaaaaa"
+theme.fg_focus = "#ffffff"
+theme.fg_urgent = "#ffffff"
+theme.fg_minimize = "#ffffff"
+
+theme.useless_gap = dpi(4)
+theme.border_width = dpi(1)
 theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.border_focus = "#535d6c"
 theme.border_marked = "#91231c"
 
 theme.titlebar_bg_normal = "#252525"
@@ -48,16 +48,13 @@ theme.notification_opacity = 0.9
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+-- theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-taglist_square_size, theme.fg_normal
-)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size,
+                              	theme.fg_normal)
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -68,67 +65,70 @@ taglist_square_size, theme.fg_normal
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = theme_path.."submenu.png"
+theme.menu_submenu_icon = theme.dir .. "submenu.png"
 theme.menu_height = dpi(18)
-theme.menu_width  = dpi(120)
+theme.menu_width = dpi(120)
 
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
+-- theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = theme_path.."titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = theme_path.."titlebar/close_focus.png"
+theme.titlebar_close_button_normal = theme.dir .. "titlebar/close_normal.png"
+theme.titlebar_close_button_focus = theme.dir .. "titlebar/close_focus.png"
 
-theme.titlebar_minimize_button_normal = theme_path.."titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = theme_path.."titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = theme.dir .. "titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus = theme.dir .. "titlebar/minimize_focus.png"
 
-theme.titlebar_ontop_button_normal_inactive = theme_path.."titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = theme_path.."titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = theme_path.."titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = theme_path.."titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_inactive = theme.dir .. "titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_inactive = theme.dir .. "titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_active = theme.dir .. "titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_active = theme.dir .. "titlebar/ontop_focus_active.png"
 
-theme.titlebar_sticky_button_normal_inactive = theme_path.."titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = theme_path.."titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = theme_path.."titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = theme_path.."titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_inactive = theme.dir .. "titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_inactive = theme.dir .. "titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_active = theme.dir .. "titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_active = theme.dir .. "titlebar/sticky_focus_active.png"
 
-theme.titlebar_floating_button_normal_inactive = theme_path.."titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = theme_path.."titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = theme_path.."titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = theme_path.."titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_inactive = theme.dir ..
+                                                 	"titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_inactive = theme.dir .. "titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_active = theme.dir .. "titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_active = theme.dir .. "titlebar/floating_focus_active.png"
 
-theme.titlebar_maximized_button_normal_inactive = theme_path.."titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = theme_path.."titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = theme_path.."titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = theme_path.."titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_inactive = theme.dir ..
+                                                  	"titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_inactive = theme.dir ..
+                                                 	"titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_active = theme.dir .. "titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_active = theme.dir .. "titlebar/maximized_focus_active.png"
 
-theme.wallpaper = theme_path.."background.jpg"
+theme.wallpaper = theme.dir .. "background.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = theme_path.."layouts/fairhw.png"
-theme.layout_fairv = theme_path.."layouts/fairvw.png"
-theme.layout_floating  = theme_path.."layouts/floatingw.png"
-theme.layout_magnifier = theme_path.."layouts/magnifierw.png"
-theme.layout_max = theme_path.."layouts/maxw.png"
-theme.layout_fullscreen = theme_path.."layouts/fullscreenw.png"
-theme.layout_tilebottom = theme_path.."layouts/tilebottomw.png"
-theme.layout_tileleft   = theme_path.."layouts/tileleftw.png"
-theme.layout_tile = theme_path.."layouts/tilew.png"
-theme.layout_tiletop = theme_path.."layouts/tiletopw.png"
-theme.layout_spiral  = theme_path.."layouts/spiralw.png"
-theme.layout_dwindle = theme_path.."layouts/dwindlew.png"
-theme.layout_cornernw = theme_path.."layouts/cornernww.png"
-theme.layout_cornerne = theme_path.."layouts/cornernew.png"
-theme.layout_cornersw = theme_path.."layouts/cornersww.png"
-theme.layout_cornerse = theme_path.."layouts/cornersew.png"
+theme.layout_fairh = theme.dir .. "layouts/fairhw.png"
+theme.layout_fairv = theme.dir .. "layouts/fairvw.png"
+theme.layout_floating = theme.dir .. "layouts/floatingw.png"
+theme.layout_magnifier = theme.dir .. "layouts/magnifierw.png"
+theme.layout_max = theme.dir .. "layouts/maxw.png"
+theme.layout_fullscreen = theme.dir .. "layouts/fullscreenw.png"
+theme.layout_tilebottom = theme.dir .. "layouts/tilebottomw.png"
+theme.layout_tileleft = theme.dir .. "layouts/tileleftw.png"
+theme.layout_tile = theme.dir .. "layouts/tilew.png"
+theme.layout_tiletop = theme.dir .. "layouts/tiletopw.png"
+theme.layout_spiral = theme.dir .. "layouts/spiralw.png"
+theme.layout_dwindle = theme.dir .. "layouts/dwindlew.png"
+theme.layout_cornernw = theme.dir .. "layouts/cornernww.png"
+theme.layout_cornerne = theme.dir .. "layouts/cornernew.png"
+theme.layout_cornersw = theme.dir .. "layouts/cornersww.png"
+theme.layout_cornerse = theme.dir .. "layouts/cornersew.png"
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_path.."archlinux-icon.png"
---theme_assets.awesome_icon(
+theme.awesome_icon = theme.dir .. "archlinux-icon.png"
+-- theme_assets.awesome_icon(
 --    theme.menu_height, theme.bg_focus, theme.fg_focus
---)
+-- )
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
@@ -138,7 +138,7 @@ local volumearc_widget = require("awm-widgets.volume-widget.volume")
 local brightnessarc_widget = require("awm-widgets.brightness-widget.brightness")
 local mpdarc_widget = require("awm-widgets.mpdarc-widget.mpdarc")
 local temprature_widget = require("widgets.temprature-widget")
-local todo_widget = require("widgets.todo-widget.todo")
+local todo_widget = require("awm-widgets.todo-widget.todo")
 local seperator = wibox.widget.textbox(" ")
 
 local lain = require("lain")
@@ -147,32 +147,35 @@ local weather_widget = lain.widget.weather
 function theme.at_screen_connect(s)
 	-- If wallpaper is a function, call it with the screen
 	local wallpaper = theme.wallpaper
-	if type(wallpaper) == "function" then
-		wallpaper = wallpaper(s)
-	end
+	if type(wallpaper) == "function" then wallpaper = wallpaper(s) end
 	gears.wallpaper.maximized(wallpaper, s, true)
 
 	awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
-	
+
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
 
 	-- Create an imagebox widget which will contains an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
-	s.mylayoutbox:buttons(my_table.join(
-		awful.button({}, 1, function () awful.layout.inc( 1) end),
-		awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
-		awful.button({}, 3, function () awful.layout.inc(-1) end),
-		awful.button({}, 4, function () awful.layout.inc( 1) end),
-		awful.button({}, 5, function () awful.layout.inc(-1) end)
-	))
+	s.mylayoutbox:buttons(my_table.join(awful.button({}, 1, function()
+		awful.layout.inc(1)
+	end), awful.button({}, 2, function()
+		awful.layout.set(awful.layout.layouts[1])
+	end), awful.button({}, 3, function()
+		awful.layout.inc(-1)
+	end), awful.button({}, 4, function()
+		awful.layout.inc(1)
+	end), awful.button({}, 5, function()
+		awful.layout.inc(-1)
+	end)))
 	-- Create a taglist widget
 	s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
-	
+
 	-- Create a tasklist widget
-	s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
-	
+	s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags,
+               		awful.util.tasklist_buttons)
+
 	-- Create the wibox
 	s.mywibox = awful.wibar({
 		position = "top",
