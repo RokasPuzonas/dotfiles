@@ -1,9 +1,9 @@
 [submodule ".config/awesome/modules/awm-widgets"]
-	path = .config/awesome/modules/awm-widgets
+	path = .config/awesome/libs/awm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets
 [submodule ".config/awesome/modules/lain"]
-	path = .config/awesome/modules/lain
+	path = .config/awesome/libs/lain
 	url = https://github.com/lcpz/lain
 [submodule ".config/awesome/modules/freedesktop"]
-	path = .config/awesome/modules/freedesktop
+	path = .config/awesome/libs/freedesktop
 	url = https://github.com/lcpz/awesome-freedesktop

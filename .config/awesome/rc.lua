@@ -1,13 +1,12 @@
 pcall(require, "luarocks.loader")
 
 local gears = require("gears")
-local config_dir = gears.filesystem.get_configuration_dir()
-package.path = package.path .. ";"..config_dir.."/modules/?.lua"
-package.path = package.path .. ";"..config_dir.."/modules/?/init.lua"
 
-local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
-local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring,
-	tonumber, type
+-- If luarocks is not installed, or a certain package is not installed.
+-- Use fallback from libs directory
+local config_dir = gears.filesystem.get_configuration_dir()
+package.path = ("%s;%s/libs/?.lua"):format(package.path, config_dir)
+package.path = ("%s;%s/libs/?/init.lua"):format(package.path, config_dir)
 
 local awful = require("awful")
 require("awful.autofocus")
