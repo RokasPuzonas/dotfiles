@@ -220,7 +220,7 @@ local function attachTitlebar(c)
 
 	-- Default
 	-- buttons for the titlebar
-	local buttons = my_table.join(awful.button({}, 1, moveClient), awful.button({}, 3, resizeClient))
+	local buttons = gears.table.join(awful.button({}, 1, moveClient), awful.button({}, 3, resizeClient))
 
 	awful.titlebar(c, {size = dpi(16)}):setup{
 		{ -- Left

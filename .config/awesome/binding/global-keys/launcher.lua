@@ -15,7 +15,7 @@ local function toggleQuakeTerminal()
 	awful.screen.focused().quake:toggle()
 end
 
-local function launchDmenuRun()
+local function runProgramLauncher()
 	os.execute(("dmenu_run -i -fn 'Terminus-10' -nb '%s' -nf '%s' -sb '%s' -sf '%s'"):format(
 	beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
 end
@@ -39,7 +39,7 @@ return {
 	},
 	{
 		button = "x", mod = {modkey},
-		press = launchDmenuRun,
+		press = wrap(awful.spawn, "rofi -show run"),
 		description = "launch dmenu"
 	},
 	{
