@@ -1,18 +1,28 @@
-" General
+" Enable syntax highlighting for all files
 syntax enable
 filetype plugin on
+
+" Load external config in current directory if found
 set exrc
+
 set hidden
 set nowrap
-set showmode
+set noshowmode
+set foldmethod=indent
+
+" If possible use 24 Bit Colors
 set termguicolors
+
+" Always keep at least 8 blank lines below the last line
 set scrolloff=8
+
+" Draw a line on the 80 character mark for reference
 set colorcolumn=80
 
 " Display relative and absolute line numbers
-set nu rnu
+set number relativenumber
 
-" Disable those annoying DINGS when you press TAB too much
+" Disable those annoying DINGS when you pressing something too much
 set noerrorbells
 
 " Always use system clipboard

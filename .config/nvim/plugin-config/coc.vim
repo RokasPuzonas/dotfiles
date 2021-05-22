@@ -1,33 +1,33 @@
-  let g:coc_global_extensions = [
-    \ 'coc-snippets',
-    \ 'coc-actions',
-    \ 'coc-sh',
-    \ 'coc-java-debug',
-    \ 'coc-java',
-    \ 'coc-lists',
-    \ 'coc-emmet',
-    \ 'coc-tasks',
-    \ 'coc-pairs',
-    \ 'coc-tsserver',
-    \ 'coc-floaterm',
-    \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-emoji',
-    \ 'coc-cssmodules',
-    \ 'coc-yaml',
-    \ 'coc-python',
-    \ 'coc-pyright',
-    \ 'coc-explorer',
-    \ 'coc-svg',
-    \ 'coc-prettier',
-    \ 'coc-vimlsp',
-    \ 'coc-xml',
-    \ 'coc-yank',
-    \ 'coc-json',
-    \ 'coc-marketplace',
-    \ 'coc-tabnine',
-    \ 'coc-highlight',
-    \ ]
+let g:coc_global_extensions = [
+	\ 'coc-snippets',
+	\ 'coc-actions',
+	\ 'coc-sh',
+	\ 'coc-java-debug',
+	\ 'coc-java',
+	\ 'coc-lists',
+	\ 'coc-emmet',
+	\ 'coc-tasks',
+	\ 'coc-tsserver',
+	\ 'coc-floaterm',
+	\ 'coc-html',
+	\ 'coc-css',
+	\ 'coc-emoji',
+	\ 'coc-cssmodules',
+	\ 'coc-yaml',
+	\ 'coc-python',
+	\ 'coc-pyright',
+	\ 'coc-explorer',
+	\ 'coc-svg',
+	\ 'coc-pairs',
+	\ 'coc-prettier',
+	\ 'coc-lua',
+	\ 'coc-vimlsp',
+	\ 'coc-xml',
+	\ 'coc-json',
+	\ 'coc-marketplace',
+	\ 'coc-tabnine',
+	\ 'coc-highlight',
+	\ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -53,10 +53,10 @@ else
 endif
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -73,7 +73,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-" nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
   autocmd!
