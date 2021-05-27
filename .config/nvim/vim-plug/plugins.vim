@@ -21,20 +21,33 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'andrejlevkovitch/vim-lua-format'
 Plug 'tpope/vim-surround'
 
+" Discord presence
+" Plug 'vimsence/vimsence'
+
+" Better commenting
+Plug 'tpope/vim-commentary'
+
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" Pretty statusline
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 
-Plug 'preservim/nerdtree'
+" File tree
 Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+
 " cht.sh integration
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-cheat.sh'
 
+" Integrated testing
+Plug 'geekjuice/vim-mocha'
+
 " Syntax highlighting
 Plug 'chr4/nginx.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Themes
 Plug 'joshdick/onedark.vim'
