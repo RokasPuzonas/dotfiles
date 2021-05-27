@@ -1,5 +1,4 @@
 export EDITOR=nvim
-export GUI_EDITOR=code
 export BROWSER=brave
 
 export XDG_DATA_HOME="$HOME/.local/share"
