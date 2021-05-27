@@ -11,7 +11,7 @@ set exrc
 set hidden
 set nowrap
 set noshowmode
-set foldmethod=indent
+set foldmethod=marker
 
 " If possible use 24 Bit Colors
 set termguicolors
@@ -41,6 +41,7 @@ set tabstop=2 softtabstop=2
 set shiftwidth=2
 set noexpandtab
 set smartindent
+set timeoutlen=300
 
 " Better Searching
 set nohlsearch

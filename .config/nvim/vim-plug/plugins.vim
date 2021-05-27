@@ -6,9 +6,13 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin(stdpath('data'). '/plugged')
+" Keybind cheat sheet
+Plug 'liuchengxu/vim-which-key'
+
 " Intelli-sense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Fuzzy file finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
