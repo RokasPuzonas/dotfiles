@@ -25,6 +25,9 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+" cht.sh integration
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
 
 " Syntax highlighting
 Plug 'chr4/nginx.vim'
