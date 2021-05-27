@@ -4,6 +4,9 @@ let mapleader=" "
 " Disable Ex-mode
 map Q <Nop>
 
+" Toggle whitespace characters
+nnoremap <leader>ws :set list!<CR>
+
 " Easier movement between splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

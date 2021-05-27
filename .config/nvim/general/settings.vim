@@ -2,6 +2,9 @@
 syntax enable
 filetype plugin on
 
+" Display whitespace characters
+set listchars=space:.,eol:$,tab:>-
+
 " Load external config in current directory if found
 set exrc
 
