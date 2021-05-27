@@ -33,8 +33,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
 
-export PATH="/usr/java/jre1.8.0_101/bin:$PATH"
-export PATH="/usr/java/jdk1.8.0_101/bin:$PATH"
 export JAVA_HOME="/usr/java/jdk1.8.0_101"
 export _JAVA_OPTIONS="-Xmx2048m"
+
+# Rebind caps lock to escape
+setxkbmap -option caps:escape
 
