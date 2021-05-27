@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Compositor
+Exec=picom -e 1 --vsync -D 5 -i 1
+Terminal=false
