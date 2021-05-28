@@ -1,0 +1,49 @@
+" Easier movement between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <C-w>h <nop>
+nnoremap <C-w>j <nop>
+nnoremap <C-w>k <nop>
+nnoremap <C-w>l <nop>
+
+" Sample mappings
+
+nmap s :shell<cr>
+nmap S :sort<cr>
+nmap w :view<cr>
+nmap o :!gvim --remote-tab-silent %f<cr>
+nmap O :!gvim %f<cr>
+
+" Open file in the background using its default program
+nmap gb :file &<cr>l
+
+" Yank current directory path into the clipboard
+nmap yd :!echo %d | xclip %i<cr>
+
+" Yank current file path into the clipboard
+nmap yf :!echo %c:p | xclip %i<cr>
+
+" Mappings for faster renaming
+nmap I cw<c-a>
+nmap cc cw<c-u>
+nmap A cw<c-w>
+
+" Opening console in current directory
+nmap ,t :!xterm &<cr>
+
+" Opening vim to edit .vifmrc
+nmap ,c :execute ':!nvim $MYVIFMRC' | restart<cr>
+
+" Toggle wrap setting on ,w key
+nmap ,w :set wrap!<cr>
+
+" Example of standard two-panel file managers mappings
+nmap <f3> :!less %f<cr>
+nmap <f4> :edit<cr>
+nmap <f5> :copy<cr>
+nmap <f6> :move<cr>
+nmap <f7> :mkdir<space>
+nmap <f8> :delete<cr>

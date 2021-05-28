@@ -1,0 +1,12 @@
+" vim: filetype=vifm :
+
+source ~/.config/vifm/general/settings.vifm
+source ~/.config/vifm/general/marks.vifm
+source ~/.config/vifm/general/commands.vifm
+source ~/.config/vifm/general/filetype.vifm
+
+source ~/.config/vifm/keys/mappings.vifm
+
+source ~/.config/vifm/themes/gruvbox.vifm
+
+

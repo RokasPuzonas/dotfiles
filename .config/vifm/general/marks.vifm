@@ -1,0 +1,4 @@
+
+" :mark mark /full/directory/path [filename]
+mark h ~
+mark c ~/code
