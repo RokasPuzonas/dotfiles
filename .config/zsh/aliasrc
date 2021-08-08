@@ -30,9 +30,12 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias code='code --user-data-dir=$VSCODE_PORTABLE'
 
+alias tt='taskwarrior-tui'
+alias lg='lazygit'
+
 alias st-256color='st'
 alias vim='nvim'
-alias pacman-update='sudo pacman-mirrors --geoip'
+alias pacman-update='reflector -p http,https --sort score -a 24 --save /etc/pacman.d/mirrorlist'
 
 alias ls='lsd'
 alias tmux='tmux -u -f ~/.config/tmux/tmux.conf'
@@ -60,7 +63,6 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| grep'
 alias -g L="| less"
-alias -g M="| most"
 alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
@@ -79,7 +81,6 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias gds-start='sudo systemctl start openvpn-client@gds'
