@@ -14,8 +14,8 @@ nnoremap <C-w>l <nop>
 nmap s :shell<cr>
 nmap S :sort<cr>
 nmap w :view<cr>
-nmap o :!gvim --remote-tab-silent %f<cr>
-nmap O :!gvim %f<cr>
+nmap o :!nvim --remote-tab-silent %f<cr>
+nmap O :!nvim %f<cr>
 
 " Open file in the background using its default program
 nmap gb :file &<cr>l
@@ -32,7 +32,7 @@ nmap cc cw<c-u>
 nmap A cw<c-w>
 
 " Opening console in current directory
-nmap ,t :!xterm &<cr>
+nmap ,t :!alacritty &<cr>
 
 " Opening vim to edit .vifmrc
 nmap ,c :execute ':!nvim $MYVIFMRC' | restart<cr>

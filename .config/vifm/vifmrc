@@ -9,4 +9,4 @@ source ~/.config/vifm/keys/mappings.vifm
 
 source ~/.config/vifm/themes/gruvbox.vifm
 
-
+set vicmd=nvim

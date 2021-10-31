@@ -1,7 +1,7 @@
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such Elvis or Vile
 " you will need to change this setting.
-set vicmd=vim
+set vicmd=nvim
 
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
