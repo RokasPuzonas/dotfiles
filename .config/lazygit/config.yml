@@ -1,3 +1,6 @@
+gui:
+  showCommandLog: false
+  showFileTree: true
 customCommands:
   - key: "C"
     command: "git cz commit"
