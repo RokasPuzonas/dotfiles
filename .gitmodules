@@ -13,3 +13,6 @@
 [submodule ".config/zsh/powerlevel10k"]
 	path = .config/zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".tmux"]
+	path = .tmux
+	url = https://github.com/gpakosz/.tmux.git

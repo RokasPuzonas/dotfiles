@@ -33,6 +33,7 @@ alias code='code --user-data-dir=$VSCODE_PORTABLE'
 alias tt='taskwarrior-tui'
 alias lg='lazygit'
 
+alias tmux='tmux -2'
 alias st-256color='st'
 alias vim='nvim'
 alias v='nvim'
@@ -40,7 +41,6 @@ alias pacman-update='reflector -p http,https --sort score -a 24 --save /etc/pacm
 alias PROClient='PROClient -force-opengl'
 
 alias ls='lsd'
-alias tmux='tmux -u -f ~/.config/tmux/tmux.conf'
 alias ll='ls -l --color=auto'
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable

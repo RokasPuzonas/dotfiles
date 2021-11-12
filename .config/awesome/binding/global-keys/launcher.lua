@@ -20,7 +20,7 @@ local function runProgramLauncher()
 	beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
 end
 
-local terminal = "st"
+local terminal = "alacritty"
 local gui_editor = os.getenv("GUI_EDITOR") or "code"
 local browser = os.getenv("BROWSER") or "brave"
 
@@ -34,7 +34,7 @@ return {
 	]]--
 	{
 		button = "Return", mod = {modkey},
-		press = wrap(awful.spawn, terminal),
+		press = wrap(awful.spawn, string.format("%s -e tmux attach", terminal)),
 		description = "launch terminal"
 	},
 	{
