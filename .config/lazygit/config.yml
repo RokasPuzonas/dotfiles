@@ -1,6 +1,9 @@
 gui:
   showCommandLog: false
   showFileTree: true
+  theme:
+    selectedLineBgColor:
+      - reverse
 customCommands:
   - key: "C"
     command: "git cz commit"
