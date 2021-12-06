@@ -6,6 +6,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export DOCKER_BUILDKIT=1
+export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export LESSHISTFILE=-
 
 export ANDROID_SDK_ROOT=/home/puzonas/Android/Sdk
@@ -26,7 +28,6 @@ export RANDFILE="$XDG_CACHE_HOME/.rnd"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export SSB_HOME="$XDG_DATA_HOME/zoom"
-export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export GOPATH="$XDG_DATA_HOME/go"
 
 # export PATH="$PATH:/usr/lib"
@@ -35,6 +36,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export JAVA_HOME="/usr/java/jdk1.8.0_101"
 export _JAVA_OPTIONS="-Xmx4096m"
