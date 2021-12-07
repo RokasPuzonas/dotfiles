@@ -20,6 +20,11 @@ verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,unwait
 data.location=$XDG_DATA_HOME/task/
 hooks.location=$XDG_CONFIG_HOME/task/hooks/
 
+# Modify priority coefficients
+uda.priority.values = H,M,,L
+urgency.uda.priority.L.coefficient = 0
+urgency.uda.priority..coefficient = 1.8
+
 # Color theme (uncomment one to use)
 #include light-16.theme
 #include light-256.theme
