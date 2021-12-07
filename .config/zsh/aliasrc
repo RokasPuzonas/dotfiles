@@ -39,6 +39,7 @@ alias vim='nvim'
 alias v='nvim'
 alias pacman-update='reflector -p http,https --sort score -a 24 --save /etc/pacman.d/mirrorlist'
 alias PROClient='PROClient -force-opengl'
+alias icat='kitty +kitten icat'
 
 alias ls='lsd'
 alias ll='ls -l --color=auto'
