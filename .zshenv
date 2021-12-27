@@ -5,6 +5,14 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export XDG_DESKTOP_DIR="$HOME/desktop"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_DOCUMENTS_DIR="$HOME/documents"
+export XDG_MUSIC_DIR="$HOME/music"
+export XDG_PICTURES_DIR="$HOME/pictures"
+export XDG_SCREENSHOTS_DIR="$HOME/pictures/screenshots"
+export XDG_VIDEOS_DIR="$HOME/videos"
+
 export DOCKER_BUILDKIT=1
 export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
