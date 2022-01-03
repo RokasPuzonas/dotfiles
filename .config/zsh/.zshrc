@@ -26,6 +26,18 @@ _comp_options+=(globdots)               # Include hidden files.
 # Custom ZSH binds
 bindkey '^ ' autosuggest-accept
 
+# Dynamic window title with zsh shell.
+# Shows current directory and running (multi-line) command.
+case "$TERM" in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
+	preexec () {
+		print -Pn "\e]2;%~ | ${(j:\n:)}${(f)1}\a"
+	}
+	precmd () {
+		print -Pn "\e]2;%~\a"
+	}
+  ;;
+esac
+
 # Aliases
 source "$HOME/.config/zsh/aliasrc"
 
