@@ -52,7 +52,3 @@ export _JAVA_OPTIONS="-Xmx4096m"
 
 # Rebind caps lock to escape
 setxkbmap -option caps:escape
-
-# Remove teams from autostart, because every time that teams is launched
-# This file is re-created
-# rm ~/.config/autostart/teams.desktop
