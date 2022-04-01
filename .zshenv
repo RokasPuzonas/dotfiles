@@ -46,6 +46,7 @@ export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="node_moudles/.bin:$PATH"
 
 export JAVA_HOME="/usr/java/jdk1.8.0_101"
 export _JAVA_OPTIONS="-Xmx4096m"

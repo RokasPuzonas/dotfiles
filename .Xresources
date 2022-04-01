@@ -1,4 +1,5 @@
 *font: Fira Code Medium 13
+Xft.dpi: 96
 
 ! special
 *.foreground:   #fce8c3
@@ -38,4 +39,3 @@
 *.color15:      #fce8c3
 
 st.font: Fira Code Medium:pixelsize=13:antialias=true:autohint=true
-
