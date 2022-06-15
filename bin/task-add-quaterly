@@ -1,0 +1,2 @@
+#!/bin/sh
+task add +QUARTERLTY_GOAL due:eoq $@

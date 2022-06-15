@@ -1,0 +1,11 @@
+#!/bin/bash
+
+[[ `whoami` != "root" ]] && echo "Must be root." && exit 1
+
+echo -e "\e[1;36mCleaning package caches\e[0m" 
+
+# All packages
+paccache -rk3 -c /var/cache/pacman/pkg
+
+# Uninstalled packages
+paccache -ruk1 -c /var/cache/pacman/pkg

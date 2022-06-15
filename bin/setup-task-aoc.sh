@@ -1,0 +1,26 @@
+# Create 25 recurring tasks for each advent of code day
+task add AOC day 1 recur:yearly due:2021-12-02T00:00-05:00 until:2022-01-01 wait:2021-12-01T00:00-05:00
+task add AOC day 2 recur:yearly due:2021-12-03T00:00-05:00 until:2022-01-01 wait:2021-12-02T00:00-05:00
+task add AOC day 3 recur:yearly due:2021-12-04T00:00-05:00 until:2022-01-01 wait:2021-12-03T00:00-05:00
+task add AOC day 4 recur:yearly due:2021-12-05T00:00-05:00 until:2022-01-01 wait:2021-12-04T00:00-05:00
+task add AOC day 5 recur:yearly due:2021-12-06T00:00-05:00 until:2022-01-01 wait:2021-12-05T00:00-05:00
+task add AOC day 6 recur:yearly due:2021-12-07T00:00-05:00 until:2022-01-01 wait:2021-12-06T00:00-05:00
+task add AOC day 7 recur:yearly due:2021-12-08T00:00-05:00 until:2022-01-01 wait:2021-12-07T00:00-05:00
+task add AOC day 8 recur:yearly due:2021-12-09T00:00-05:00 until:2022-01-01 wait:2021-12-08T00:00-05:00
+task add AOC day 9 recur:yearly due:2021-12-10T00:00-05:00 until:2022-01-01 wait:2021-12-09T00:00-05:00
+task add AOC day 10 recur:yearly due:2021-12-11T00:00-05:00 until:2022-01-01 wait:2021-12-10T00:00-05:00
+task add AOC day 11 recur:yearly due:2021-12-12T00:00-05:00 until:2022-01-01 wait:2021-12-11T00:00-05:00
+task add AOC day 12 recur:yearly due:2021-12-13T00:00-05:00 until:2022-01-01 wait:2021-12-12T00:00-05:00
+task add AOC day 13 recur:yearly due:2021-12-14T00:00-05:00 until:2022-01-01 wait:2021-12-13T00:00-05:00
+task add AOC day 14 recur:yearly due:2021-12-15T00:00-05:00 until:2022-01-01 wait:2021-12-14T00:00-05:00
+task add AOC day 15 recur:yearly due:2021-12-16T00:00-05:00 until:2022-01-01 wait:2021-12-15T00:00-05:00
+task add AOC day 16 recur:yearly due:2021-12-17T00:00-05:00 until:2022-01-01 wait:2021-12-16T00:00-05:00
+task add AOC day 17 recur:yearly due:2021-12-18T00:00-05:00 until:2022-01-01 wait:2021-12-17T00:00-05:00
+task add AOC day 18 recur:yearly due:2021-12-19T00:00-05:00 until:2022-01-01 wait:2021-12-18T00:00-05:00
+task add AOC day 19 recur:yearly due:2021-12-20T00:00-05:00 until:2022-01-01 wait:2021-12-19T00:00-05:00
+task add AOC day 20 recur:yearly due:2021-12-21T00:00-05:00 until:2022-01-01 wait:2021-12-20T00:00-05:00
+task add AOC day 21 recur:yearly due:2021-12-22T00:00-05:00 until:2022-01-01 wait:2021-12-21T00:00-05:00
+task add AOC day 22 recur:yearly due:2021-12-23T00:00-05:00 until:2022-01-01 wait:2021-12-22T00:00-05:00
+task add AOC day 23 recur:yearly due:2021-12-24T00:00-05:00 until:2022-01-01 wait:2021-12-23T00:00-05:00
+task add AOC day 24 recur:yearly due:2021-12-25T00:00-05:00 until:2022-01-01 wait:2021-12-24T00:00-05:00
+task add AOC day 25 recur:yearly due:2021-12-26T00:00-05:00 until:2022-01-01 wait:2021-12-25T00:00-05:00

@@ -1,0 +1,2 @@
+#!/bin/sh
+task add +YEARLY_GOAL due:eoy $@

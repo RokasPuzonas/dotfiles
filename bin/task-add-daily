@@ -1,0 +1,2 @@
+#!/bin/sh
+task add +DAILY_GOAL due:eod $@

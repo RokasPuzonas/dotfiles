@@ -1,0 +1,21 @@
+#!/bin/sh
+
+main()
+{
+	local option=$(echo -e 'toggle\nnext\nprevious\nvolume\nrestart' | dmenu -p 'Music')
+	if [[ $option == 'toggle' ]]; then
+		mpc -q toggle
+	elif [[ $option == 'next' ]]; then
+		mpc -q next
+	elif [[ $option == 'previous' ]]; then
+		mpc -q prev
+	elif [[ $option == 'volume' ]]; then
+		mpc -q volume $(echo -e '+5\n-5' | dmenu -p "Volume($(mpc volume | awk '{print $2}'))")
+	elif [[ $option == 'restart' ]]; then
+		mpc -q stop
+		killall mpd
+		mpd &
+	fi
+}
+
+main

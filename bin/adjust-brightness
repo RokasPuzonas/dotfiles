@@ -1,0 +1,3 @@
+To list screens: xrandr --prop | grep " connected"
+To set brightness: xrandr --output HDMI2 --brightness 0.4
+

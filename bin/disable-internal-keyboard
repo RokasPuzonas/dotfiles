@@ -1,0 +1,2 @@
+#!/bin/sh
+xinput list | awk -F"[= \t]+" '/AT Translated Set 2/ {print $9}' | xargs xinput float

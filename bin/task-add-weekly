@@ -1,0 +1,2 @@
+#!/bin/sh
+task add +WEEKLY_GOAL due:eow $@

@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo -A systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+sudo xset s off
+sudo xset s 0

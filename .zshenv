@@ -39,7 +39,7 @@ export SSB_HOME="$XDG_DATA_HOME/zoom"
 export GOPATH="$XDG_DATA_HOME/go"
 
 # export PATH="$PATH:/usr/lib"
-export PATH="$HOME/code/scripts:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
