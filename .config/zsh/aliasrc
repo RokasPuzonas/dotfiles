@@ -25,9 +25,9 @@ ex ()
 }
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias lazydotfiles='/usr/bin/lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias lazydotfiles='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+# alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias code='code --user-data-dir=$VSCODE_PORTABLE'
 
 alias tt='taskwarrior-tui'

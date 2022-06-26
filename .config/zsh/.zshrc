@@ -26,6 +26,9 @@ _comp_options+=(globdots)               # Include hidden files.
 # Custom ZSH binds
 bindkey '^ ' autosuggest-accept
 
+# Stolen from primeagen
+bindkey -s ^f "tmux-sessionizer\n"
+
 # Dynamic window title with zsh shell.
 # Shows current directory and running (multi-line) command.
 case "$TERM" in (rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
@@ -47,6 +50,8 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/autojump/autojump.zsh 2>/dev/null
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
+# Node version manager
+source /usr/share/nvm/init-nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
@@ -59,5 +64,3 @@ source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 #[[ $(pgrep redshift) = "" ]] && redshift -t 6500:4000 &
 
 #[[ $(pgrep xss-lock) = "" ]] && xss-lock -q slock &
-
-
